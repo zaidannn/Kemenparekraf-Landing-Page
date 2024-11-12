@@ -1,0 +1,104 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Firebase Authentication Example</title>
+    <script type="module">
+      // Import Firebase SDK
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js";
+      import {
+        getAuth,
+        createUserWithEmailAndPassword,
+        signInWithEmailAndPassword,
+      } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
+
+      // Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyAtIUAIVb5Bh8_nkVpQWVGbu39NH3kXx_8",
+        authDomain: "testingayam-e4dda.firebaseapp.com",
+        databaseURL:
+          "https://testingayam-e4dda-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "testingayam-e4dda",
+        storageBucket: "testingayam-e4dda.appspot.com",
+        messagingSenderId: "912189223343",
+        appId: "1:912189223343:web:2d459de838cb1f0bfbff5a",
+        measurementId: "G-WYV5BNRD6M",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+
+      // Function to handle sign up
+      async function signUp() {
+        const email = document.getElementById("signup-email").value;
+        const password = document.getElementById("signup-password").value;
+
+        try {
+          const userCredential = await createUserWithEmailAndPassword(
+            auth,
+            email,
+            password
+          );
+          console.log("User registered: ", userCredential.user);
+          alert("Registration successful!");
+        } catch (error) {
+          console.error(
+            "Error during registration: ",
+            error.code,
+            error.message
+          );
+          alert("Registration failed: " + error.message);
+        }
+      }
+
+      // Function to handle login
+      async function login() {
+        const email = document.getElementById("login-email").value;
+        const password = document.getElementById("login-password").value;
+
+        try {
+          const userCredential = await signInWithEmailAndPassword(
+            auth,
+            email,
+            password
+          );
+          console.log("User logged in: ", userCredential.user);
+          alert("Login successful!");
+          // Redirect or perform other actions after login
+        } catch (error) {
+          console.error("Error during login: ", error.code, error.message);
+          alert("Login failed: " + error.message);
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Firebase Authentication Example</h1>
+
+    <h2>Sign Up</h2>
+    <div>
+      <input type="email" id="signup-email" placeholder="Email" required />
+      <input
+        type="password"
+        id="signup-password"
+        placeholder="Password"
+        required
+      />
+      <button onclick="signUp()">Sign Up</button>
+    </div>
+
+    <h2>Login</h2>
+    <div>
+      <input type="email" id="login-email" placeholder="Email" required />
+      <input
+        type="password"
+        id="login-password"
+        placeholder="Password"
+        required
+      />
+      <button onclick="login()">Login</button>
+    </div>
+  </body>
+</html> -->
